@@ -31,7 +31,7 @@ The goal was to create a secure environment where access between network segment
 
 ### On-Premises Network Topology
 
-![GNS3 On-Premises Network Topology](images/01-gns3-on-premises-topology.png)
+![GNS3 On-Premises Network Topology](images/gns3-on-premises-topology.png)
 
 ---
 
@@ -52,7 +52,7 @@ The focus of this stage was improving scalability while maintaining security thr
 
 ### Azure Hybrid Architecture
 
-![Azure Hybrid Network Architecture](images/02-azure-hybrid-architecture.png)
+![Azure Hybrid Network Architecture](images/azure-hybrid-architecture.png)
 
 ---
 
@@ -74,7 +74,7 @@ This stage provided the most growth because it required deeper research into clo
 
 ### Monitoring Platform Architecture
 
-![Docker Monitoring Architecture](images/04-docker-monitoring-architecture.png)
+![Docker Monitoring Architecture](images/docker-monitoring-architecture.png)
 
 ---
 
@@ -136,7 +136,7 @@ Active Directory was used for centralized identity management in the on-premises
 
 Organizational Units (OUs), security groups, and Group Policy Objects were used to control access and apply security policies.
 
-![Active Directory OU Structure](images/03-active-directory-structure.png)
+![Active Directory OU Structure](images/active-directory-structure.png)
 
 ---
 
@@ -210,7 +210,7 @@ GitHub Actions was used to automate validation and deployment processes.
 
 The pipeline verifies changes before deployment, reducing configuration mistakes and improving consistency.
 
-![GitHub Actions CI/CD Pipeline](images/05-github-actions-ci-cd.png)
+![GitHub Actions CI/CD Pipeline](images/github-actions-ci-cd.png)
 
 ---
 
