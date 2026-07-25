@@ -210,7 +210,7 @@ GitHub Actions was used to automate validation and deployment processes.
 
 The pipeline verifies changes before deployment, reducing configuration mistakes and improving consistency.
 
-![GitHub Actions CI/CD Pipeline](images/github-actions-ci-cd.png)
+![GitHub Actions CI/CD Pipeline](images/github-actions-pipeline-success.png)
 
 ---
 
