@@ -153,53 +153,60 @@ Example:
 
 ## Security Considerations
 
-Explain the important security decisions.
+Security was considered throughout the entire project.
 
-Example:
+Implemented security measures:
 
-- Used least privilege access where possible
-- Restricted communication between network segments
-- Disabled unnecessary public access
-- Applied firewall/security rules based on required communication only
+- Network segmentation to reduce lateral movement
+- Firewall rules controlling communication between Vlans
+- NSGs using a default-deny approach
+- Role-based access control 
+- Private-endpoint to backend resources
+- Identity-based authentication using Active Directory and Entra ID
+- Secure communication using HTTPS
 
 ---
 
 ## Testing & Validation
 
-Explain how you verified the project worked.
+The environment was validated through multiple tests:
 
-Example:
-
-- Tested allowed and blocked network traffic
-- Verified firewall rules
-- Checked authentication flows
-- Validated service communication
-- Tested deployment process
+- Tested VLAN isolation
+- Verified firewall rules using allowed and blocked traffic tests
+- Tested Active Directory authentication
+- Verified GPO restrictions
+- Validated Azure NSG behaviour
+- Tested hybrid connectivity
+- Verified monitoring data collection
+- Tested container deployment
 
 ---
 
 ## Challenges & Lessons Learned
 
-Talk about real problems.
+Key lessons learned:
 
-Example:
+- This was my introduction project to Infrasttructure and Cloud, i had previosly never workign with things such as networks so being able to have the knowldge i have gained oveer the past semester has done me very well
 
-- Learned the importance of planning network addressing before deployment
-- Improved understanding of cloud networking concepts
-- Learned how security decisions impact architecture design
+- Documentation is very important for keeping information at hand and for scalability
+- Security needs to be considered during architecture design rather than added afterwards.
+- Proper network planning prevents redesign later.
+- Hybrid environments require careful consideration of identity, networking, and security dependencies.
+- Automation improves consistency and reduces human error during configuration.
+
 
 ---
 
 ## Future Improvements
 
-Things you would improve if continuing.
+Possible improvements:
 
-Example:
-
-- Implement Infrastructure as Code
-- Add better monitoring
-- Improve automation
-- Add additional security controls
+- Fully implement Infrastructure as Code using Terraform or Bicep
+- Add Azure Firewall for advanced network protection
+- Integrate Microsoft Sentinel for security monitoring
+- Improve automated testing
+- Expand Zero Trust implementation
+- Improve IPv6 support
 
 ---
 
@@ -211,12 +218,12 @@ Example:
 
 ## Project Status
 
-Completed / In Development / Archived
+Completed
 
 ---
 
 ## Author
 
-Your Name
+Quinn Daamen
 
 GitHub: your-profile-link
