@@ -31,7 +31,7 @@ The goal was to create a secure environment where access between network segment
 
 ### On-Premises Network Topology
 
-![GNS3 On-Premises Network Topology](images/gns3-on-premises-topology.png)
+![GNS3 On-Premises Network Topology](images/gns3-network-topology.png)
 
 ---
 
@@ -136,7 +136,7 @@ Active Directory was used for centralized identity management in the on-premises
 
 Organizational Units (OUs), security groups, and Group Policy Objects were used to control access and apply security policies.
 
-![Active Directory OU Structure](images/active-directory-structure.png)
+![Active Directory OU Structure](images/active-directory-ou-structure.png)
 
 ---
 
