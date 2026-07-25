@@ -6,73 +6,106 @@ Individual infrastructure project growing from an on-premises GNS3 environment i
 
 ## Overview
 
-Explain the project in 1-3 paragraphs.
+This project focuses on designing and implementing a secure, manageable, and scalable infrastructure environment for a fictional library organization called **The Knowledge Hub**.
 
-Include:
-- What problem this project solves
-- What you built
-- The main goal
-- Whether it was a personal project, school project, or group project
+The goal of this project was to modernize the organization's infrastructure by starting with a traditional on-premises network and gradually building it into a hybrid cloud environment using Microsoft Azure. The project focused on network segmentation, centralized identity management, security controls, monitoring, and automation.
 
-Example:
-
-This project focuses on designing and implementing a secure infrastructure environment for a fictional organization. The project demonstrates network segmentation, identity management, cloud integration, and security improvements.
-This Project focused on researching designing and implementing a infrastructure for a fictional library organisation that had the need to secure be managable, expandable and modernize by using an hybrid architecture. 
-This was an School project therefor it was performed in 3 stages:
-- On prem using GNS3
-    - I implemented the basic infrastructure resources such as:
-    - Vlans using a managed Exos Swithc
-    - A firewal usingn PFsense
-    - WIndows Active Directory
-    - File Server with controlled acces using GPO's? and OUs
- 
-Next stage was to mae the network HGybrid and introduce things such as Monitoring
-- Hybrid Using Azure
-  - Hub Spoke model for VNets
-  - NSGs to limit the traffic flowing between subnets and Vnets
-  - IPSEC for a VPN connection betwen the on premise network and the cloud network
-  - Monitoring VMs for highger than usual CPU/RAM/Disk usage and alerting ... via emails used by azure monitoring
+This was an individual school project completed in multiple stages:
 
 
-Stage 3 Modernize the existing monitoring platform into a secure, containerized system. An implementation of IPv6 connectivity, ZTA principles, and a CI/CD pipeline
-  - This was the stage where i learned the most due to better research as of before
-      - Docker was setup as a way to containorize the montirong scripts for easy deployment on the vms
+## Stage 1 - On-Premises Infrastructure
+
+The first stage focused on building the foundation of an enterprise network using GNS3.
+
+Implemented components:
+
+- VLAN segmentation using a managed Exos Network switch
+- pfSense firewall for traffic control and network security using Firewall rules
+- Windows Active Directory for centralized authentication
+- DNS and DHCP services
+- File server with controlled access using Active Directory groups, OUs, and Group Policy Objects (GPOs)
+- Network separation between staff, public users, and server resources
+
+The goal was to create a secure  environment where access between network segments was controlled.
+
 ---
+
+## Stage 2 - Hybrid Azure Environment
+
+The second stage builded the infrastructure into Microsoft Azure by introducing cloud resources and hybrid connectivity.
+
+Implemented components:
+
+- Azure Hub-Spoke network architecture
+- Virtual Networks (VNets) and subnet segmentation
+- Network Security Groups (NSGs) to control traffic between subnets
+- IPsec Site-to-Site VPN connection between the on-premises environment and Azure
+- Azure monitoring for resource health and performance
+- Alerting for abnormal CPU, memory, and disk usage
+
+The focus of this stage was improving scalability while maintaining security through segmentation and using Azure Monitoring
+
+---
+
+## Stage 3 - Secure Containerized Monitoring Platform
+
+The final stage focused on modernizing the monitoring platform by improving deployment flexibility, security, and automation.
+
+Implemented components:
+
+- Containerized monitoring services using Docker
+- Python-based monitoring agents and API services
+- Flask dashboard for displaying collected metrics
+- Microsoft Entra ID authentication
+- CI/CD pipeline using GitHub Actions
+- Introduction of Zero Trust Architecture principles
+- Improved security through service separation and least privilege concepts
+
+This stage provided the most growth because it required deeper research into cloud security, automation, and modern application deployment practices.
+
+---
+
 
 ## Technologies Used
 
 ### Infrastructure
-- 
-- 
-- 
-
-### Networking
-- 
-- 
-- 
-
-### Security
-- 
-- 
-- 
-
-### Development / Automation
-- 
-- 
-- 
-
-Example:
-
-- Microsoft Azure
 - GNS3
 - pfSense
+- Extreme Networks switching
 - Windows Server
 - Active Directory
-- Docker
-- GitHub Actions
+- Linux
+
+### Networking
+- VLANs
+- Routing
+- Firewall rules
+- DNS
+- DHCP
+- IPsec VPN
+- Azure Virtual Networks (VNets)
+- Subnets
+- Network Security Groups (NSGs)
+- Hub-Spoke Architecture
+
+### Cloud & Security
+- Microsoft Azure
+- Microsoft Entra ID
+- Azure Monitor
+- Azure Alerts
+- Private Endpoints
+- Role-Based Access Control (RBAC)
+- Zero Trust principles
+
+### Development / Automation
 - Python
+- Flask
+- Docker
+- Docker Compose
+- GitHub Actions
+- CI/CD
 - Linux CLI
-- 
+
 
 ---
 
