@@ -1,10 +1,12 @@
 # The Knowledge Hub - Hybrid Infrastructure
 
-Individual infrastructure project growing from an on-premises GNS3 environment into a hybrid Azure architecture.
+An individual infrastructure project where I built a fictional library's IT environment from the ground up, starting with an on-premises network in GNS3 and eventually extending it into a hybrid Azure environment.
 
 ---
 
 ## Overview
+
+I built this project as part of my first semester of Networking & Cloud at Fontys.
 
 This project focuses on designing and implementing a secure, manageable, and scalable infrastructure environment for a fictional library organization called **The Knowledge Hub**.
 
@@ -16,7 +18,9 @@ This was an individual school project completed in multiple stages:
 
 ## Stage 1 - On-Premises Infrastructure
 
-The first stage focused on building the foundation of an enterprise network using GNS3.
+I started by building the basic enterprise network in GNS3.
+
+The goal was to create a network where different types of users and resources were separated instead of putting everything into one large network.
 
 Implemented components:
 
@@ -27,7 +31,7 @@ Implemented components:
 - File server with controlled access using Active Directory groups, OUs, and Group Policy Objects (GPOs)
 - Network separation between staff, public users, and server resources
 
-The goal was to create a secure environment where access between network segments was controlled.
+The main thing I learned in this stage was how much planning is required before adding more services. VLANs, IP addressing, DNS, DHCP, Active Directory, and firewall rules all depend on each other.
 
 ### On-Premises Network Topology
 
@@ -37,7 +41,9 @@ The goal was to create a secure environment where access between network segment
 
 ## Stage 2 - Hybrid Azure Environment
 
-The second stage extended the infrastructure into Microsoft Azure by introducing cloud resources and hybrid connectivity.
+Once the on-premises environment was working the next goal was to move a part of the network to the cloud
+
+I built a hybrid environment in Azure and connected it back to the GNS3 network using an IPsec site-to-site VPN.
 
 Implemented components:
 
@@ -48,7 +54,7 @@ Implemented components:
 - Azure monitoring for resource health and performance
 - Alerting for abnormal CPU, memory, and disk usage
 
-The focus of this stage was improving scalability while maintaining security through segmentation and Azure monitoring.
+This stage made me understand that moving infrastructure to the cloud doesn't remove the networking and security problems. You still have to think about segmentation, routing, access control, identity, and how different resources communicate.
 
 ### Azure Hybrid Architecture
 
@@ -58,7 +64,9 @@ The focus of this stage was improving scalability while maintaining security thr
 
 ## Stage 3 - Secure Containerized Monitoring Platform
 
-The final stage focused on modernizing the monitoring platform by improving deployment flexibility, security, and automation.
+The final stage was where the project became more development-focused.
+
+Instead of only managing infrastructure manually, I built a small monitoring platform using Python and Docker.
 
 Implemented components:
 
@@ -70,7 +78,9 @@ Implemented components:
 - Introduction of Zero Trust Architecture principles
 - Improved security through service separation and least privilege concepts
 
-This stage provided the most growth because it required deeper research into cloud security, automation, and modern application deployment practices.
+This was probably the most challenging stage because I had to combine things from different areas rather than working with only networking or only cloud infrastructure.
+
+I had to think about how the containers communicated, how the application was authenticated, how the services were deployed, and what each service actually needed access to.
 
 ### Monitoring Platform Architecture
 
@@ -122,11 +132,17 @@ This stage provided the most growth because it required deeper research into clo
 
 # Architecture
 
-The environment consists of an on-premises network connected with Azure resources.
+The final environment combines the original on-premises network with resources running in Azure.
 
-Segmentation is implemented using VLANs, VNets, subnets, and security rules to reduce unauthorized access and lateral movement.
+The on-premises side uses VLANs and firewall rules to separate different parts of the network. Azure uses VNets, subnets, NSGs, and private endpoints for segmentation too.
 
-The overall architecture evolved from a traditional enterprise network into a hybrid cloud environment.
+The two environments communicate through the site-to-site VPN.
+
+The architecture therefore evolved from:
+
+On-premises network → segmented enterprise network → hybrid Azure network → containerized monitoring platform
+
+This was the main progression of the project.
 
 ---
 
