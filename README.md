@@ -12,6 +12,18 @@ This project focuses on designing and implementing a secure, manageable, and sca
 
 The goal of this project was to modernize the organization's infrastructure by starting with a traditional on-premises network and gradually building it into a hybrid cloud environment using Microsoft Azure. The project focused on network segmentation, centralized identity management, security controls, monitoring, and automation.
 
+
+
+## Why I Made This
+
+First of all, this was the semester assignment made by the teachers, but in the project itself there was a lot of flexibility and decisions to be made in your own way.
+
+Before this project I had no experience with most of the things covered, like how to make a basic on-premises infrastructure, let alone a whole hybrid environment with Docker monitoring.
+
+Through making this project I learned many things that I find useful and have now used in more projects. It built a foundation for future projects where I can work with more knowledge and understanding.
+
+I am now also doing another semester of Infrastructure and Cloud to build on this further and eventually have enough knowledge and experience to move more into cybersecurity.
+
 This was an individual school project completed in multiple stages:
 
 ---
@@ -132,17 +144,19 @@ I had to think about how the containers communicated, how the application was au
 
 # Architecture
 
-The final environment combines the original on-premises network with resources running in Azure.
+The final environment combined the original on-premises network with the resources running in Azure.
 
-The on-premises side uses VLANs and firewall rules to separate different parts of the network. Azure uses VNets, subnets, NSGs, and private endpoints for segmentation too.
+The on-premises environment was built in GNS3 and uses VLANs to separate the different parts of the network. pfSense was used for routing and firewall rules between the different networks. Active Directory, DNS, DHCP and the file server are also running on the on-premises side.
 
-The two environments communicate through the site-to-site VPN.
+For the Azure part I used a Hub-Spoke architecture. The Hub is used for central connectivity and contains services such as the VPN Gateway and Azure Bastion. The different workloads are separated into Spoke VNets and subnets. NSGs are then used to control which traffic is allowed between these different parts of the environment.
 
-The architecture therefore evolved from:
+The on-premises environment and Azure are connected through an IPsec Site-to-Site VPN. This allows resources in both environments to communicate while still keeping the networks separated and controlled.
 
-On-premises network → segmented enterprise network → hybrid Azure network → containerized monitoring platform
+The architecture therefore grew throughout the project:
 
-This was the main progression of the project.
+**On-premises network → VLAN segmentation → Hybrid Azure environment → Containerized monitoring platform**
+
+Each stage added something new to the previous stage instead of creating the complete environment at once. This also meant that I had to keep changing and improving parts of the infrastructure when new requirements were introduced.
 
 ---
 
@@ -234,7 +248,7 @@ The pipeline verifies changes before deployment, reducing configuration mistakes
 
 Key lessons learned:
 
-- This project was my introduction to infrastructure and cloud technologies. Before this project I had limited experience with networking concepts, but building this environment significantly improved my understanding of enterprise infrastructure.
+This project was my introduction to infrastructure and cloud technologies. Before this project I had nearly no experience with networking, but building this environment improved my understanding of  infrastructures by a lot.
 
 - Documentation is important for maintaining knowledge and improving scalability.
 - Security needs to be considered during architecture design rather than added afterwards.
@@ -248,7 +262,7 @@ Key lessons learned:
 
 Possible improvements:
 
-- Fully implement Infrastructure as Code using Terraform or Bicep
+- Fully implement Infrastructure as Code using Bicep
 - Add Azure Firewall for advanced network protection
 - Integrate Microsoft Sentinel for security monitoring
 - Improve automated testing
@@ -262,9 +276,3 @@ Possible improvements:
 Completed
 
 ---
-
-## Author
-
-Quinn Daamen
-
-GitHub: your-profile-link
